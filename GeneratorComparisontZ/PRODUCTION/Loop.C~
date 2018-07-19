@@ -1,0 +1,392 @@
+
+#include "TZ_D3PD.C"
+#include <iostream>
+#include <fstream> 
+//#include "TROOT.h"
+#include "TFile.h"
+#include "TTree.h"
+#include "TLeaf.h"
+#include "TH1.h"
+#include "TH2.h"
+#include "TCanvas.h"
+#include "assert.h"
+#include "TLorentzVector.h"
+#include "TString.h"
+#include "Wvariables.cxx"
+#include "TopPolarization.C"
+#include "AngularVariables.C"
+#include "THStack.h"
+#include "TStyle.h"
+#include "TLegend.h"
+#include <vector>
+using namespace std;
+
+void Loop()
+{ 
+
+  TH1F *testNjets=new TH1F("testNjets","testNjets",10,0,10);
+  TH1F *testNlep=new TH1F("testNlep","testNlep",10,0,10);
+  TH1F *testNelec=new TH1F("testNelec","testNelec",10,0,10);
+  
+  TH1F *tPT=new TH1F("tPT","t quark PT",40,0,400);
+  TH1F *tEta=new TH1F("tEta","t quark Eta",20,-5,5);
+  TH1F *tphi=new TH1F("tphi","t quark phi",16,-4,4);
+     
+  TH1F *lPT=new TH1F("lPT","lepton PT",40,0,400);
+  TH1F *lEta=new TH1F("lEta","lepton Eta",20,-5,5);
+  TH1F *lphi=new TH1F("lphi","lepton phi",16,-4,4);
+  
+  TH1F *vPT=new TH1F("vPT","neutrino PT",40,0,400);
+  TH1F *vEta=new TH1F("vEta","neutrino Eta",20,-5,5);
+  TH1F *vphi=new TH1F("vphi","neutrino phi",16,-4,4);
+  
+  TH1F *wPT=new TH1F("wPT","W PT",40,0,400);
+  TH1F *wEta=new TH1F("wEta","W Eta",20,-5,5);
+  TH1F *wphi=new TH1F("wphi","W phi",16,-4,4);
+  
+  TH1F *zPT=new TH1F("zPT","Z PT",40,0,400);
+  TH1F *zEta=new TH1F("zEta","Z Eta",20,-5,5);
+  TH1F *zphi=new TH1F("zphi","Z phi",16,-4,4);
+  
+
+  TH1F *WTmass=new TH1F("WTmass","WTransversemass",25,0,250);
+  TH1F *TopPolHB=new TH1F("TopPolHB","TopPolarizationHelicityBasis",10,-1,1);
+  TH1F *TopPolOB=new TH1F("TopPolOB","TopPolarizationOptimalBasis",10,-1,1);
+  TH1F *centralityhist=new TH1F("centrality","centrality",10,0,1);
+  TH1F *sphericityhist=new TH1F("sphericity","sphericity",20,0,1);
+  TH1F *aplanarityhist=new TH1F("aplanarity","aplanarity",20,0,1);
+  TH1F *circularityhist=new TH1F("circularity","circularity",20,0,1);
+  TH1F *WHel=new TH1F("WHel","WHelicity",10,-1,1);
+  TH1F *h_hist=new TH1F("h","h",30,0,3000);
+  TH1F *ht_hist=new TH1F("ht","ht",20,0,1000);
+
+  int nEvents=100;
+  double Lumi=20.3;
+  double crossSection=1.652;
+  double theweight=1000*Lumi*crossSection/nEvents;
+  double afterNothing=0;
+
+  TChain * t = new TChain("truth");
+  t->Add("MC12_8TeV.110491.NTUP_TRUTH.root");
+  t->SetCacheSize(100000000);
+ 
+  TZ_D3PD* event = new TZ_D3PD(t);
+
+  //TFile *TruthFile=new TFile("unweighted_events.root");
+  
+  //TTree* LHEF=(TTree*)TruthFile->Get("LHEF");
+  
+  for(int q=0;q<nEvents;q++)
+    {
+      afterNothing+=theweight;
+      
+      t->GetEntry(q);
+      
+      //int nparticles = *event->(Event_Nparticles);
+      //int nparticles = *event->Event_Nparticles();
+      
+      
+      //if(q%100==0)
+      cout<<"event "<<q<<'\n';
+
+      //cout<<"q="<<q<<'\n'<<"nparticles="<<nparticles<<'\n';
+
+
+      TLorentzVector NegMET;
+      TLorentzVector MET;
+      TLorentzVector wFourVec;
+      TLorentzVector zFourVec;
+      TLorentzVector tFourVec;
+
+      zFourVec.SetPtEtaPhiM(0,0,0,0);
+      wFourVec.SetPtEtaPhiM(0,0,0,0);
+      tFourVec.SetPtEtaPhiM(0,0,0,0);
+      MET.SetPtEtaPhiM(0,0,0,0);
+
+
+      vector<TLorentzVector> jet;
+      //vector<bool> isb;
+      vector<TLorentzVector> lepton;
+      //vector<int> lcharge;
+      vector<int> ltype;
+      //vector<int> isZ;
+      //int nelec=0;
+      
+      cout<<"nparticles "<<event->mc_n<<'\n';
+
+      for(int i=0;i<event->mc_n;i++)
+	{
+	  int one=0;
+	  int two=0;
+	  if((*event->mc_status).at(i)==3)
+	    {
+	      TLorentzVector temp;
+	      temp.SetPtEtaPhiE((*event->mc_pt).at(i),(*event->mc_eta).at(i),(*event->mc_phi).at(i),(*event->mc_E).at(i));
+	      std::vector<int, std::allocator<int> > mc_parents=(*event->mc_parents).at(i);
+	      vector<int>::iterator p = mc_parents.begin();
+	      while(p!=mc_parents.end())
+		{
+		  //cout<<"particle status = "<< (*event->mc_status).at(i) ;
+		  //cout<<" : particle parents = "<<*p;
+		  //cout<<" : particle PID = " << (*event->mc_pdgId).at(i);
+		  //cout<<" : temp.Pt() = " << temp.Pt()/1000;
+		  //cout<<" : temp.Eta() = " << temp.Eta();
+		  //cout<<" : temp.Phi() = " << temp.Phi();
+		  //cout<<" : temp.E() = " << temp.E()/1000;
+		  //cout<<'\n';
+		  one=*p++;
+		}
+
+	      for(int j=0;j<event->mc_n;j++)
+		{
+		  if((*event->mc_status).at(j)==3)
+		    {
+		      TLorentzVector temp2;
+		      temp2.SetPtEtaPhiE((*event->mc_pt).at(j),(*event->mc_eta).at(j),(*event->mc_phi).at(j),(*event->mc_E).at(j));
+		      std::vector<int, std::allocator<int> > mc_parents2=(*event->mc_parents).at(j);
+		      vector<int>::iterator p2 = mc_parents2.begin();
+		      
+		      while(p2!=mc_parents2.end())
+			{
+			  //cout<<" : particle parents2 = "<<*p2<<'\n';
+			  two=*p2++;
+			}
+		      if((*event->mc_pdgId).at(i)>(*event->mc_pdgId).at(j) && (one==two))
+			{
+			  cout<<"found pair"<<"  "<<(*event->mc_pdgId).at(i)<<"  "<<(*event->mc_pdgId).at(j)<<"  "<<one<<"  "<<two<<'\n';
+			}
+		      
+
+		      //cout<<" : particle parents2 = "<<*p2;
+		      
+		      //if(*p==*p2)
+		      //{
+			//cout<<"same parents";
+		      //}
+
+		      
+
+
+
+		    }
+		}
+	    }
+	}
+
+
+	     
+      // if(fabs((*event->mc_pdgId).at(i))==6)
+      // {}
+
+      //if(fabs((*event->mc_pdgId).at(i))==5)
+      //    {}
+      
+      //  if(fabs((*event->mc_pdgId).at(i))==23)
+      //    {}
+      //  if(fabs((*event->mc_pdgId).at(i))==24)
+      //    {}
+
+      //  if(fabs((*event->mc_pdgId).at(i))==11)
+      //    {}
+      //  if(fabs((*event->mc_pdgId).at(i))==13)
+      //    {}
+      //  if(fabs((*event->mc_pdgId).at(i))==15)
+      //    {}
+
+      //  if(fabs((*event->mc_pdgId).at(i))==12)
+      //    {}
+      //  if(fabs((*event->mc_pdgId).at(i))==14)
+      //    {}
+      //  if(fabs((*event->mc_pdgId).at(i))==16)
+      //    {}
+
+	  // if(fabs((*event->mc_pdgId).at(i))==23)
+	  //  {}
+	  //if(fabs((*event->mc_pdgId).at(i))==23)
+	  //  {}
+	 
+
+       
+     
+      for(int i=0;i<event->jet_AntiKt4TruthJets_n;i++)
+	{
+	  TLorentzVector temp;
+	  temp.SetPtEtaPhiE((*event->jet_AntiKt4TruthJets_pt).at(i),(*event->jet_AntiKt4TruthJets_eta).at(i),(*event->jet_AntiKt4TruthJets_phi).at(i),(*event->jet_AntiKt4TruthJets_E).at(i));
+	  jet.push_back(temp);
+	}
+      
+      for(int i=0;i<(event->el_n);i++)
+	{
+	  TLorentzVector temp;
+	  temp.SetPtEtaPhiM((*event->el_pt).at(i),(*event->el_eta).at(i),(*event->el_phi).at(i),(*event->el_m).at(i));
+	  lepton.push_back(temp);
+	  ltype.push_back(1);
+	}
+
+      for(int i=0;i<(event->mu_n);i++)
+	{
+	  TLorentzVector temp;
+	  temp.SetPtEtaPhiM((*event->mu_pt).at(i),(*event->mu_eta).at(i),(*event->mu_phi).at(i),(*event->mu_m).at(i));
+	  lepton.push_back(temp);
+	  ltype.push_back(2);
+	}
+
+      int nlep= event->el_n + event->mu_n;
+      int nelec=event->el_n;
+      
+      //cout<<"filling"<<'\n';
+      //now we have done jet recombination and are sorted making a plot of Njets
+      testNjets->Fill(jet.size(),theweight);
+      testNlep->Fill(nlep,theweight);
+      testNelec->Fill(nelec,theweight);
+      
+      //making plots of leading and subleading jet
+      
+      
+      double WTransverseMass=0;
+      double TopPolHel=0;
+      double TopPolOpt=0;
+      double centrality=0;
+      double sphericity=0;
+      double aplanarity=0;
+      double circularity=0;
+      double WHelicity=0;
+      double h=0;
+      double ht=0;
+
+      WTmass->Fill(WTransverseMass/1000,theweight);
+      TopPolHB->Fill(TopPolHel,theweight);
+      TopPolOB->Fill(TopPolOpt,theweight);
+      centralityhist->Fill(centrality,theweight);
+      sphericityhist->Fill(sphericity,theweight);
+      aplanarityhist->Fill(aplanarity,theweight);
+      circularityhist->Fill(circularity,theweight);
+      WHel->Fill(WHelicity,theweight);
+      h_hist->Fill(h,theweight);
+      ht_hist->Fill(ht,theweight);
+            
+      
+    }//end event loop
+
+
+ 
+  testNjets->Draw();
+  testNjets->Scale(Lumi*crossSection/afterNothing);
+  testNlep->Draw();
+  testNlep->Scale(Lumi*crossSection/afterNothing);
+  testNelec->Draw();
+  testNelec->Scale(Lumi*crossSection/afterNothing);
+  
+  tPT->Scale(Lumi*crossSection/afterNothing);
+  tPT->Draw();
+  tEta->Scale(Lumi*crossSection/afterNothing);
+  tEta->Draw();
+  tphi->Scale(Lumi*crossSection/afterNothing);
+  tphi->Draw();
+  
+  lPT->Scale(Lumi*crossSection/afterNothing);
+  lPT->Draw();
+  lEta->Scale(Lumi*crossSection/afterNothing);
+  lEta->Draw();
+  lphi->Scale(Lumi*crossSection/afterNothing);
+  lphi->Draw();
+  
+  vPT->Scale(Lumi*crossSection/afterNothing);
+  vPT->Draw();
+  vEta->Scale(Lumi*crossSection/afterNothing);
+  vEta->Draw();
+  vphi->Scale(Lumi*crossSection/afterNothing);
+  vphi->Draw();
+  
+  wPT->Scale(Lumi*crossSection/afterNothing);
+  wPT->Draw();
+  wEta->Scale(Lumi*crossSection/afterNothing);
+  wEta->Draw();
+  wphi->Scale(Lumi*crossSection/afterNothing);
+  wphi->Draw();
+  
+  zPT->Scale(Lumi*crossSection/afterNothing);
+  zPT->Draw();
+  zEta->Scale(Lumi*crossSection/afterNothing);
+  zEta->Draw();
+  zphi->Scale(Lumi*crossSection/afterNothing);
+  zphi->Draw();
+    
+  WTmass->Scale(Lumi*crossSection/afterNothing);
+  WTmass->Draw();
+  
+  TopPolHB->Scale(Lumi*crossSection/afterNothing);
+  TopPolOB->Scale(Lumi*crossSection/afterNothing);
+  centralityhist->Scale(Lumi*crossSection/afterNothing);
+  sphericityhist->Scale(Lumi*crossSection/afterNothing);
+  aplanarityhist->Scale(Lumi*crossSection/afterNothing);
+  circularityhist->Scale(Lumi*crossSection/afterNothing);
+  WHel->Scale(Lumi*crossSection/afterNothing);
+  h_hist->Scale(Lumi*crossSection/afterNothing);
+  ht_hist->Scale(Lumi*crossSection/afterNothing);
+  
+  TopPolHB->Draw();
+  TopPolOB->Draw();
+  centralityhist->Draw();
+  sphericityhist->Draw();
+  circularityhist->Draw();
+  aplanarityhist->Draw();
+  WHel->Draw();
+  h_hist->Draw();
+  ht_hist->Draw();
+  
+  
+  gStyle->SetOptTitle(0);
+  gStyle->SetOptStat(0);
+  //gStyle->SetOptStat(0);
+      
+ 
+  TFile outfile("histos-tzValidation.root","recreate");
+
+  
+  tPT->Write();
+  tEta->Write();
+  tphi->Write();
+  
+  lPT->Write();
+  lEta->Write();
+  lphi->Write();
+  
+  vPT->Write();
+  vEta->Write();
+  vphi->Write();
+  
+  wPT->Write();
+  wEta->Write();
+  wphi->Write();
+  
+  zPT->Write();
+  zEta->Write();
+  zphi->Write();
+  
+  testNjets->Write();
+  testNlep->Write();
+  testNelec->Write();
+
+  WTmass->Write();
+  TopPolHB->Write();
+  TopPolOB->Write();
+  centralityhist->Write();
+  sphericityhist->Write();
+  circularityhist->Write();
+  aplanarityhist->Write();
+  WHel->Write();
+  h_hist->Write();
+  ht_hist->Write();
+
+  outfile.Write();
+    
+  cout<<'\n'<<'\n'<<'\n';
+}
+
+int main(int argc, char **argv)
+{
+  argc=0;
+  argv[0][0]='0';
+  return 0;
+}

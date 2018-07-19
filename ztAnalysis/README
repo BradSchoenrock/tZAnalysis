@@ -1,0 +1,11 @@
+the samplefile is looking at all root files needs only *el.root and *mu.root
+
+the analysis is empty, needs selection here
+
+the samples in samplefile are pointing to minintuples with only one lepton
+
+samplefile0	MiniNtuples single lepton
+samplefile1	some topD3PDs WW leptonic
+samplefile2	some topD3PDs WZ leptoning +2 jets
+
+OUT.NTUP_TRUTH.root is ducs fastsim madgraph for zt

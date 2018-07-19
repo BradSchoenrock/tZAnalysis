@@ -1,0 +1,46 @@
+
+Submit 
+
+the directory where batch submission scripts are kept. This is made for MSUs tier3 system. 
+
+Open GenerateSubmit.sh - replace all instances of /home/schoenr1/fast2/ztAnalysis with your own directory where you are running. 
+
+--------------
+
+samplefiles
+
+directory containing samplefiles. samplefileN is the main one. When you run_things.sh it will automatically split this into a bunch of samplefiles to be used one file per job. the contents of the samplefile is on each line 
+
+path_to_root_file xsec name_of_sample root_color_for_plot
+
+the plotting code also read this in to group the results and format the plots 
+
+--------------
+
+output
+
+this directory holds the results after job submition but before being put into stacked histograms. 
+
+--------------
+
+histos
+
+This directory holds the stacked histograms in pdf, png, and root format. It alsohas a webpage and a script to generate it.
+
+--------------
+
+
+bash run_things.sh 
+
+the first line makes sure you are in the correct directory, so edit that as needed. 
+
+runs the analysis. it does not run the histogram maker. The commented out part of run_things.sh does this, but usually i do this seperately because changes only need to be done before or after this point so running them independantly makes more sense. 
+
+root -b Stack.C+ 
+
+to test one job run the following lines 
+
+bash run_one.sh 
+
+
+--------------

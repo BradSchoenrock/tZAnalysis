@@ -1,0 +1,128 @@
+\documentclass[10pt,twoside,a4paper]{article}
+\usepackage{color}
+\usepackage[utf8]{inputenc}
+\begin{document}
+
+ 
+\begin{table} [ht!]
+\setlength{\tabcolsep}{2pt}
+\footnotesize
+\centering
+\begin{tabular}{l | r}
+\hline
+\hline
+Process & Signal region \\ 
+\hline
+$Z \rightarrow \mu \mu$ $p_T$ (500,700) BFil & 0.00 \\ 
+$Z \rightarrow \mu \mu$ $p_T$ (500,700) CFilBVet & 0.00 \\ 
+$Z \rightarrow \mu \mu$ $p_T$ (500,700) CVetBVet & 0.00 \\ 
+$Z \rightarrow \mu \mu$ $p_T$ (280,500) BFil & 0.02 \\ 
+$Z \rightarrow \mu \mu$ $p_T$ (280,500) CFilBVet & 0.00 \\ 
+$Z \rightarrow \mu \mu$ $p_T$ (280,500) CVetBVet & 0.01 \\ 
+$Z \rightarrow \mu \mu$ $p_T$ (140,280) BFil & 0.00 \\ 
+$Z \rightarrow \mu \mu$ $p_T$ (140,280) CFilBVet & 0.00 \\ 
+$Z \rightarrow \mu \mu$ $p_T$ (140,280) CVetBVet & 0.00 \\ 
+$Z \rightarrow \mu \mu$ $p_T$ (70,140) BFil & 0.00 \\ 
+$Z \rightarrow \mu \mu$ $p_T$ (70,140) CFilBVet & 0.37 \\ 
+$Z \rightarrow \mu \mu$ $p_T$ (70,140) CVetBVet & 0.50 \\ 
+$Z \rightarrow \mu \mu$ $p_T$ (0,70) BFil & 0.76 \\ 
+$Z \rightarrow \mu \mu$ $p_T$ (0,70) CFilBVet & 0.00 \\ 
+$Z \rightarrow \mu \mu$ $p_T$ (0,70) CVetBVet & 0.00 \\ 
+$Z \rightarrow e e$ $p_T$ (500,700) BFil & 0.00 \\ 
+$Z \rightarrow e e$ $p_T$ (500,700) CFilBVet & 0.00 \\ 
+$Z \rightarrow e e$ $p_T$ (500,700) CVetBVet & 0.00 \\ 
+$Z \rightarrow e e$ $p_T$ (280,50) BFil & 0.01 \\ 
+$Z \rightarrow e e$ $p_T$ (280,500) CFilBVet & 0.00 \\ 
+$Z \rightarrow e e$ $p_T$ (280,500) CVetBVet & 0.00 \\ 
+$Z \rightarrow e e$ $p_T$ (140,280) BFil & 0.00 \\ 
+$Z \rightarrow e e$ $p_T$ (140,280) CFilBVet & 0.00 \\ 
+$Z \rightarrow e e$ $p_T$ (140,280) CVetBVet & 0.00 \\ 
+$Z \rightarrow e e$ $p_T$ (70,140) BFil & 0.09 \\ 
+$Z \rightarrow e e$ $p_T$ (70,140) CFilBVet & 0.00 \\ 
+$Z \rightarrow e e$ $p_T$ (70,140) CVetBVet & 0.00 \\ 
+$Z \rightarrow e e$ $p_T$ (0,70) BFil & 0.00 \\ 
+$Z \rightarrow e e$ $p_T$ (0,70) CFilBVet & 0.00 \\ 
+$Z \rightarrow e e$ $p_T$ (0,70) CVetBVet & 0.00 \\ 
+\hline
+\hline
+\end{tabular}
+\caption{Predicted event yields in the signal region for Z+jets.}
+\label{tab:eventyield_Zjets}
+\end{table}
+
+ 
+\begin{table} [ht!]
+\setlength{\tabcolsep}{2pt}
+\footnotesize
+\centering
+\begin{tabular}{l | r}
+\hline
+\hline
+Process & Signal region \\ 
+\hline
+$s$-channel & 0.00 \\ 
+$W\bar{t}$ & 0.27 \\ 
+$Wt$ & 0.10 \\ 
+$\bar{t}$-channel & 0.00 \\ 
+$t$-channel & 0.00 \\ 
+tttautau_Np1 & 0.00 \\ 
+tttautau_Np0 & 0.00 \\ 
+ttmumu_Np1 & 0.23 \\ 
+ttmumu_Np0 & 0.17 \\ 
+ttee_Np1 & 0.20 \\ 
+ttee_Np0 & 0.14 \\ 
+ttZnnqq Np2 & 0.00 \\ 
+ttZnnqq Np1 & 0.00 \\ 
+ttZnnqq Np0 & 0.00 \\ 
+ttW Np2 & 0.01 \\ 
+ttW Np1 & 0.03 \\ 
+ttW Np0 & 0.03 \\ 
+ZZqqll & 0.00 \\ 
+WZlvqq & 0.00 \\ 
+WZqqll & 0.00 \\ 
+WWlvqq & 0.00 \\ 
+ZZvvll & 0.00 \\ 
+ZZllll & 0.25 \\ 
+WZlvvv & 0.00 \\ 
+WZlvll & 3.70 \\ 
+WWlvlv & 0.01 \\ 
+$t\bar{t}$ & 12.44 \\ 
+\hline
+\hline
+\end{tabular}
+\caption{Predicted event yields in the signal region for all backgrounds except Z+jets.}
+\label{tab:eventyield_BG}
+\end{table}
+
+ 
+\begin{table} [ht!]
+\setlength{\tabcolsep}{2pt}
+\footnotesize
+\centering
+\begin{tabular}{l | r}
+\hline
+\hline
+Process & Signal region \\ 
+\hline
+$t\bar{t}$ & 12.44 \\ 
+single top & 0.37 \\ 
+$ttV$ & 0.07 \\ 
+$Z$ + jets & 1.76 \\ 
+Diboson & 3.95 \\ 
+\hline
+$tZ$ & 3.06 \\ 
+\hline
+Total Expected & 22.39 \\ 
+Data Observed & 23.00 \\ 
+\hline
+ S/B & 0.16 \\ 
+ S/sqrtB & 0.70 \\ 
+\hline
+\hline
+\end{tabular}
+\caption{Observed and predicted event yields in the signal region for an integrated luminosity of $3,21 fb^{-1}$.}
+\label{tab:eventyield}
+\end{table}
+
+
+\end{document}

@@ -1,0 +1,462 @@
+Diboson2
+Diboson3
+Diboson.
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+Diboson4
+Triboson.
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+Triboson2
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+Triboson3
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+Diboson.
+Triboson.
+Diboson3
+Diboson2
+Triboson3
+Triboson2
+Diboson4
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+Diboson2
+Diboson3
+Diboson.
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+Diboson4
+Triboson.
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+Triboson2
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+Triboson3
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+Triboson3
+Triboson.
+Diboson4
+Diboson3
+Diboson2
+Triboson2
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+Triboson3
+Triboson.
+Diboson4
+Diboson3
+Triboson2
+Diboson2
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+
+before all = 0
+afterNLeptonReq = 0
+afterJetReq = 0
+afterBTagReq = 0
+afterMETReq = 0
+afterForLeadnonBJet = 0
+afterLeadnonBJetPt = 0
+afterTopMass = 0
+afterTopPt = 0
+afterTopPol = 0
+afterHt = 0
+afterAll = 0
+

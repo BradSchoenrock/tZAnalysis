@@ -1,0 +1,10 @@
+#!/bin/bash
+
+root -l <<EOF
+
+.x /home/schoenr1/work/RecoTopAlgorithm/SHORTLOOP.C+
+
+.q
+
+EOF
+
